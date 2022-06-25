@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <OSidebar class="z-50 absolute" />
-        <Nuxt class="z-0 relative"/>
+    <div class="">
+        <OSidebar class="z-50 relative w-1/12" />
+        <Nuxt class="z-0 absolute top-0 right-0 w-11/12"/>
     </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
     <div class="">
-        <OSidebar class="z-50 relative w-1/12" />
-        <Nuxt class="z-0 absolute top-0 right-0 w-11/12"/>
+        <OSidebar class="z-40 relative w-1/12" />
+        <Nuxt class="z-0 absolute top-0 right-0 w-full" />
     </div>
 </template>
 
@@ -15,7 +15,7 @@ import OSidebar from '../components/Organisms/OSideBar.vue'
     }
 })
 export default class LayoutDefault  extends Vue {
-    
+
 }
 </script>
 

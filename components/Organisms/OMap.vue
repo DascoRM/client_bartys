@@ -62,12 +62,12 @@ export default class OMap extends Vue {
     //Bar
     public iconBar = {
         url: '/marker/beer.png',
-        size: [40,40]
+        size: [30,30]
     }
     //Club
     public iconClub = {
         url: '/marker/club.png',
-        size: [40,40]
+        size: [30,30]
     }
     async created() {
        await Promise.all([

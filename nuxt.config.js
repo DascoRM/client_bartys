@@ -1,7 +1,10 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
-
+  server: {
+    host: '0.0.0.0',
+    port: '3000'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'front',
@@ -9,7 +12,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
+      // { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -35,6 +38,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/pwa',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -60,9 +64,22 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    meta: {
+      title: 'Click',
+      author: 'Dasco',
+    },
     manifest: {
+      name: 'Click app',
+      short_name: 'Click',
       lang: 'fr',
     },
+    icon: {
+      fileName: 'click-icon.png',
+      size: [64, 120, 144, 152, 192, 384, 512],
+    },
+    workbox: {
+      enabled: true
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

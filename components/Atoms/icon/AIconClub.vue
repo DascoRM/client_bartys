@@ -1,5 +1,5 @@
 <template>
-    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g class="club" @click="$emit('clickToCall')" clip-path="url(#clip0_3_295)">
             <path d="M25.7473 2.93857V7.15479H21.335V2.93857C21.335 1.71982 22.3224 0.732422 23.5411 0.732422C24.7584 0.732422 25.7473 1.71885 25.7473 2.93857Z" fill="#C6DEF4"/>
             <path d="M30 7.82353V10H17V7.82353C17 6.81647 18.3366 6 19.9852 6H27.0148C28.6634 6 30 6.81647 30 7.82353V7.82353Z" fill="#595289"/>
@@ -50,7 +50,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { activitieModule } from '~/store';
 
 @Component

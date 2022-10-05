@@ -17,14 +17,14 @@ export default class ActivitiesModule extends VuexModule {
   activitiesStatut: ActivitieStatut[] = [
     {
       id: 0,
-      title: 'bars',
+      title: 'Bars',
       icon: 'beer.png',
       component: AIconBar,
       status: true
     },
     {
       id: 1,
-      title: 'clubs',
+      title: 'Clubs',
       icon: 'club.png',
       component: AIconClub,
       status: true

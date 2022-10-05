@@ -1,22 +1,39 @@
 <template>
-    <div>
-        <font-awesome-icon class="z-50 absolute top-10 left-10" @click="activeSidebar" icon="fa-solid fa-burger" />
-
-        <div v-if="active" class="bg-white h-screen w-24 flex flex-col items-center justify-start pt-5">
-            <div class="mb-20 mt-20">
-                Logo
+    <div class="flex justify-center relative overflow-hidden" :class="[ active ? 'sidebarDown' : 'sidebarUp']">
+        <div  class="flex justify-center items-center flex-col fixed z-50 w-24 h-16 text-white">
+            <div>
+                <font-awesome-icon class="icon mt-2" @click="activeSidebar" icon="fa-solid fa-burger" />
             </div>
-            <div v-for="(item, index) in itemsMenu" :key="index">
-                <div class="mb-10">
-                    <NuxtLink to="/">
-                        <component @click.native="clickToCall(item)"  class="icons" :is="item.component" />
+            <div>
+                <p class="font-dynapuff text-xl">
+                    Click
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-blueDark text-white w-50 h-50 rounded-borderDown flex flex-col items-center justify-start pt-20">
+            <div 
+                v-for="(item, index) in itemsMenu" 
+                :key="index"
+                class="mb-10 w-full"
+                >
+                <div>
+                    <NuxtLink class="flex flex-col items-center" to="/">
+                        <component @click.native="clickToCall(item)"  class="icon" :is="item.component" />
+                        <p class="text-xs font-dynapuff">{{ item.title }}</p>
                     </NuxtLink>
                 </div>
             </div>
+            
+            <div class="mb-10 w-full flex justify-center">
+                <hr class="border-white w-1/2" />
+            </div>
+            
             <div v-for="(item, key) in itemsMenuRoute" :key="key">
                 <div class="mb-10">
-                    <NuxtLink :to="item.path">
-                        <component  class="icons" :is="item.component" />
+                    <NuxtLink class="flex flex-col items-center" :to="item.path">
+                        <component  class="icon" :is="item.component" />
+                        <p class="text-xs font-dynapuff">{{ item.title }}</p>
                     </NuxtLink>
                 </div>
             </div>
@@ -32,12 +49,13 @@ import AIconEvent from '../Atoms/icon/AIconEvent.vue'
 
 @Component
 export default class OSidebar extends Vue {
-    public active = false
+    public active = true
 
     public itemsMenuRoute = [
         {
             name: 'Evenement',
             path: '/event',
+            title: 'Évenement',
             component: AIconEvent
         }
     ]
@@ -56,8 +74,32 @@ export default class OSidebar extends Vue {
 </script>
 
 <style scoped>
-.icons {
-    width: 50px;
-    height: 50px;
+.sidebar {
+    max-height: 50px;
 }
+.sidebarUp{
+    animation: 2s ease-in-out both sidebarUp;
+    transition: max-height 200ms;
+}
+.sidebarDown {
+    animation: 2s ease-in-out reverse both sidebarDown;
+    transition: max-height 200ms;
+}
+@keyframes sidebarUp {
+    to{
+       max-height: 80px;
+    }
+    from {
+        max-height: 380px;
+    }
+}
+@keyframes sidebarDown {
+    to{
+       max-height: 80px;
+    }
+    from {
+        max-height: 380px;
+    }
+}
+
 </style>

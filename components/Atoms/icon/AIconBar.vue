@@ -43,10 +43,7 @@ export default class AIconBar extends Vue {
 </script>
 
 <style scoped>
-#bar {
-    width: 40px;
-    height: 40px;
-}
+
 .beer rect:hover {
     width: 35px;
     height:38px;

@@ -25,10 +25,10 @@ export interface Position {
 @Module({ namespaced: true, name: 'bar' })
 export default class BarModule extends VuexModule {
   bar!: Bar
-  bars: Bar[] = []
+  bars: BarResponse[] = []
 
   @Mutation
-  saveAll(bars: Bar[]) {
+  saveAll(bars: BarResponse[]) {
     this.bars = bars
   }
   @Mutation

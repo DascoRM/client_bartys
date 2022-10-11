@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <OSidebar class="z-40 relative w-1/12" />
+        <OSidebar class="z-40 relative w-3/12 md:w-1/12" />
         <Nuxt class="z-0 absolute top-0 right-0 w-full" />
     </div>
 </template>

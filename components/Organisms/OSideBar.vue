@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center relative overflow-hidden" :class="[ active ? 'sidebarDown' : 'sidebarUp']">
+    <div class="flex justify-center overflow-hidden" :class="[ active ? 'sidebarDown' : 'sidebarUp']">
         <div  class="flex justify-center items-center flex-col fixed z-50 w-24 h-16 text-white">
             <div>
                 <font-awesome-icon class="icon mt-2" @click="activeSidebar" icon="fa-solid fa-burger" />

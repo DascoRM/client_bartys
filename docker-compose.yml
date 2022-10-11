@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  nuxt_docker:
+    container_name: nuxt_docker
+    security_opt:
+      - no-new-privileges:true
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./:/app
+      - app_node_modules:/app/node_modules
+      - app_dotnuxt:/app/.nuxt
+    command: [yarn, dev]
+    ports:
+      - "8000:3000"
+    labels:
+      - "traefik.enable=true"
+      # URL pour accéder à ce conteneur
+      - "traefik.http.routers.nuxt_docker.rule=Host(`click.docker.localhost`)"
+      # Activation de TLS
+      - "traefik.http.routers.nuxt_docker.tls=true"
+      # Si le port est différent de 80, utilisez le service suivant:
+      # - "traefik.http.services.<service_name>.loadbalancer.server.port=<port>"
+    networks:
+      - proxy
+
+volumes:
+  app_node_modules:
+  app_dotnuxt:
+networks:
+  proxy:
+    external: true

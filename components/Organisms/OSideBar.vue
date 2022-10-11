@@ -13,8 +13,8 @@
 
         <div class="bg-blueDark text-white w-50 h-50 rounded-borderDown flex flex-col items-center justify-start pt-20">
             <div 
-                v-for="(item, index) in itemsMenu" 
-                :key="index"
+                v-for="item in itemsMenu" 
+                :key="item.id"
                 class="mb-10 w-full"
                 >
                 <div>
@@ -29,7 +29,7 @@
                 <hr class="border-white w-1/2" />
             </div>
             
-            <div v-for="(item, key) in itemsMenuRoute" :key="key">
+            <div v-for="item in itemsMenuRoute">
                 <div class="mb-10">
                     <NuxtLink class="flex flex-col items-center" :to="item.path">
                         <component  class="icon" :is="item.component" />

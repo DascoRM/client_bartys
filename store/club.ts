@@ -25,10 +25,10 @@ export interface Position {
 @Module({ namespaced: true, name: 'club' })
 export default class ClubModule extends VuexModule {
   club!: Club
-  clubs: Club[] = []
+  clubs: ClubResponse[] = []
 
   @Mutation
-  saveAll(clubs: Club[]) {
+  saveAll(clubs: ClubResponse[]) {
     this.clubs = clubs
   }
   @Mutation

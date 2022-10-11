@@ -1,17 +1,28 @@
 module.exports = {
     content: ['./src/**/*.{html,js}'],
     theme: {
-        extend: {
-            colors: {
-                'blueDark':  '#132A44',
-            }
+        minHeight: {
+            minard: '300px'
+        },
+        borderRadius: {
+            'borderDown': '0px 0px 50px 50px',
+            'default': '0.9rem',
+            'full': '9999px'
         },
         fontFamily: {
            dynapuff: ['DynaPuff', 'cursive'], //from main.css
         },
-        borderRadius: {
-            'borderDown': '0px 0px 50px 50px',
+        fontSize: {
+            title: '1.563rem',
+            subtitle: '0.9rem'
         },
-        
+        extend: {
+            height:  {
+                card: '300px'
+            },
+            colors: {
+                'blueDark':  '#132A44',
+            }
+        },
     }
 }

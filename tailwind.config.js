@@ -1,5 +1,8 @@
 module.exports = {
-    content: ['./src/**/*.{html,js}'],
+    content: [
+        './node_modules/flowbite/**/*.js',
+        './src/**/*.{html,js}'
+    ],
     theme: {
         minHeight: {
             minard: '300px'
@@ -24,5 +27,8 @@ module.exports = {
                 'blueDark':  '#132A44',
             }
         },
-    }
+    },
+    plugins: [
+        require('flowbite/plugin')
+    ]
 }

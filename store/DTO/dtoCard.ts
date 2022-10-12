@@ -6,8 +6,13 @@ export enum EnumColor {
     Black = '#0000'
 }
 export interface Card {
-    category: string
+    id: string
+    category: unknown
+    nameCategory: string
     title: string
+    description?: string
+    link?: string
+    pathImg?: string
     date: string
     style: {
         color: EnumColor
@@ -15,5 +20,4 @@ export interface Card {
         other_style?: string
     }
     img?: string
-
 }

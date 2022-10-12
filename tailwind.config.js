@@ -16,8 +16,10 @@ module.exports = {
            dynapuff: ['DynaPuff', 'cursive'], //from main.css
         },
         fontSize: {
+            big: '3rem',
             title: '1.563rem',
-            subtitle: '0.9rem'
+            subtitle: '0.9rem',
+            min: '0.4rem'
         },
         extend: {
             height:  {
@@ -25,10 +27,11 @@ module.exports = {
             },
             colors: {
                 'blueDark':  '#132A44',
+                'blueLight': '#A6CEF7'
             }
         },
     },
     plugins: [
-        require('flowbite/plugin')
+        require('flowbite/plugin'),
     ]
 }

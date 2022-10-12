@@ -2,14 +2,7 @@
     <div>
       <!-- Card event -->
       <div>
-        <div class=" flex justify-end p-3">
-          <div class="font-dynapuff rounded-full border border-black w-1/2 text-subtitle flex justify-end pr-2">
-            {{ bestMoment.category }}
-          </div>
-        </div>
-        <div>
-          <ACardBase :card="bestMoment"/>
-        </div>
+        <ACard :card="bestMoment" />
       </div>
       <!-- END Card event -->
     </div>
@@ -18,11 +11,12 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { Card } from '~/store/DTO/dtoCard';
-import ACardBase from '../../Atoms/card/ACardBase.vue';
+//Atoms
+import ACard from '../../Atoms/card/ACard.vue';
 
 @Component({
     components: {
-      ACardBase
+      ACard
     }
 })
 export default class MCardBasic extends Vue {

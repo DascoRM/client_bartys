@@ -1,3 +1,5 @@
+import { resolve } from 'path'
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -15,6 +17,8 @@ export default {
       // { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+
+
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -26,7 +30,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/axios-accessor',
-    '~/plugins/fontawesome.ts'
+    '~/plugins/fontawesome.ts',
+    '~/plugins/flowbite.ts'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -61,7 +66,9 @@ export default {
     whitelistPatterns: [/leaflet-.+$/],
     whitelistPatternsChildren: [/leaflet-.+$/]
   },
-
+  alias: {
+    'img': resolve(__dirname, './assets/img'),
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     meta: {

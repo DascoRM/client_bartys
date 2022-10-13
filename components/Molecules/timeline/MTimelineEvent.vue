@@ -5,7 +5,7 @@
                 Date des Évenements
             </h1>
         </div>
-        <ATimeline class="ml-5"  :timelines="timelines" />
+        <ATimeline class="md:ml-5"  :timelines="timelines" />
     </div>
 </template>
 

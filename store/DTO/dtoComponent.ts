@@ -2,6 +2,7 @@ export interface Sidebar {
     name: string 
     path: string
     icon?: unknown
+    color?: string
   }
 
 export interface AMarkerType {

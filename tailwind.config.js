@@ -27,6 +27,7 @@ module.exports = {
             },
             colors: {
                 'blueDark':  '#132A44',
+                'blueDarkOpacity': '#132a4478',
                 'blueLight': '#A6CEF7'
             }
         },

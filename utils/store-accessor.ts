@@ -4,6 +4,7 @@ import BarModule from '~/store/bar'
 import ActivitiesModule from '~/store/activitie'
 import ClubModule from '~/store/club'
 import AuthetificationModule from '~/store/authentification'
+import UserModule from '~/store/userModule'
 
 // Set rawError to true by default on all @Action decorators
 // config.rawError = true
@@ -12,12 +13,14 @@ let barModule!: BarModule
 let clubModule: ClubModule
 let activitieModule: ActivitiesModule
 let authentificationModule: AuthetificationModule
+let userModule: UserModule
 
 function initialiseStores(store: Store<any>): void {
   barModule = getModule(BarModule, store)
   clubModule = getModule(ClubModule, store)
   activitieModule = getModule(ActivitiesModule, store)
   authentificationModule = getModule(AuthetificationModule, store)
+  userModule = getModule(UserModule, store)
 }
 
 export { 
@@ -25,5 +28,6 @@ export {
   barModule, 
   clubModule, 
   activitieModule,
-  authentificationModule
+  authentificationModule,
+  userModule
 }

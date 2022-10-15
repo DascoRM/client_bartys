@@ -24,6 +24,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { authentificationModule } from '~/store';
 import { Sidebar } from '~/store/DTO/dtoComponent';
 
 
@@ -36,6 +37,12 @@ export default class AMenuAction extends Vue {
      */
     public activeMenu() {
         this.active = !this.active
+        this.itemsMenu.forEach((item: any) => {
+         if(item.name === 'Login') {
+            authentificationModule.changeAuthenficated()
+            console.log(authentificationModule.isAuthentified)
+         }
+        });
     }
 }
 </script>
@@ -58,8 +65,8 @@ export default class AMenuAction extends Vue {
 .menu-open-button {
    background: #EEEEEE;
    border-radius: 100%;
-   width: 80px;
-   height: 80px;
+   width: 60px;
+   height: 60px;
    margin-left: -40px;
    position: absolute;
    color: #FFFFFF;
@@ -145,13 +152,19 @@ export default class AMenuAction extends Vue {
 .menu-item-active:nth-child(1) {
    transition-duration: 180ms;
    -webkit-transition-duration: 180ms;
-   -webkit-transform: translate3d(0.08361px, -104.99997px, 0);
-   transform: translate3d(0.08361px, -104.99997px, 0);
+   -webkit-transform: translate3d(65px, -68px, 0);
+   transform: translate3d(65px, -68px, 0);
 }
 .menu-item-active:nth-child(2) {
     transition-duration: 280ms;
    -webkit-transition-duration: 280ms;
-   -webkit-transform: translate3d(-58px, -11.47586px, 0);
-   transform: translate3d(-58px, -11.47586px, 0);
+   -webkit-transform: translate3d(-11px, -46px, 0);
+   transform: translate3d(-11px, -46px, 0);
+}
+.menu-item-active:nth-child(3) {
+    transition-duration: 280ms;
+   -webkit-transition-duration: 280ms;
+   -webkit-transform: translate3d(-17px, 34px, 0);
+   transform: translate3d(-17px, 34px, 0);
 }
 </style>

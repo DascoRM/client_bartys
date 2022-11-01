@@ -52,13 +52,40 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    'nuxt-leaflet'
+    'nuxt-leaflet',
+    '@nuxtjs/auth-next'
   ],
-
+  // router: {
+  //   middleware: ['auth']
+  // },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // check inside /utils/api
-    
+  },
+  auth: {
+    // Options
+    strategies: {
+      local: {
+        token: {
+          property: 'jwt',
+        },
+        user: {
+          property: false,
+        },
+        endpoints: {
+          login: {
+            url: 'auth/local',
+            method: 'post',
+          },
+          user: {
+            url: 'users/me',
+            method: 'get',
+          },
+          logout: false,
+        },
+      },
+      vuex: false
+    },
   },
   //white list leaflet css
   purgeCSS: {

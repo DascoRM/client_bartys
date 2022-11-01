@@ -29,12 +29,13 @@ export default class ActivitiesModule extends VuexModule {
       component: AIconClub,
       status: true
     },
-    // {
-    //   title: 'restaurants',
-    //   icon: 'beer.png',
-    //   component: AIconClub,
-    //   status: true
-    // }
+    {
+      id: 2,
+      title: 'restaurants',
+      icon: 'beer.png',
+      component: AIconClub,
+      status: true
+    }
   ]
 
   @Mutation

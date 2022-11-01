@@ -9,14 +9,14 @@ module.exports = {
         },
         borderRadius: {
             'borderDown': '0px 0px 50px 50px',
-            'default': '0.9rem',
+            'default': '0.5rem',
             'full': '9999px'
         },
         fontFamily: {
            dynapuff: ['DynaPuff', 'cursive'], //from main.css
         },
         fontSize: {
-            big: '3rem',
+            big: '3r    em',
             title: '1.563rem',
             subtitle: '0.9rem',
             min: '0.4rem'
@@ -28,7 +28,8 @@ module.exports = {
             colors: {
                 'blueDark':  '#132A44',
                 'blueDarkOpacity': '#132a4478',
-                'blueLight': '#A6CEF7'
+                'blueLight': '#3470B6',
+                'grey': '#494E54'
             }
         },
     },

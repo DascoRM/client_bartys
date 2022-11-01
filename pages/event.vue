@@ -1,7 +1,7 @@
 <template>
     <div>
-      <div class="header z-0 h-96 w-full bg-white overflow-hidden flex justify-center md:justify-end">
-        <img class="md:w-1/2 w-auto" :src="require('img/event.jpg')" alt="">
+      <div class="header z-0 h-96 w-full bg-transparent overflow-hidden flex justify-center md:justify-end">
+        <!-- <img class="md:w-1/2 w-auto" :src="require('img/event.jpg')" alt=""> -->
       </div>
       <h1 class="font-dynapuff md:top-40 md:left-40 md:absolute top-0 z-50 p-5 text-big">
         Evenement à venir

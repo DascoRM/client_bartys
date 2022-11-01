@@ -9,18 +9,19 @@ import { Sidebar } from '~/store/DTO/dtoComponent';
 //Atoms
 import AMenuAction from '../Atoms/menu/AMenuAction.vue';
 //Store
-import { authentificationModule } from '@/utils/store-accessor'
+import AuthetificationModule from '~/store/authentification';
+import { getModule } from 'nuxt-property-decorator';
 @Component({
     components: {
         AMenuAction
     }
 })
 export default class OMenuAction extends Vue {
-
+    public authentificationModule = getModule(AuthetificationModule, this.$store)
     public get itemsMenu(): Sidebar[] {
         let items: Sidebar[] = []
 
-        if(authentificationModule.isAuthentified) {
+        if(this.authentificationModule.isAuthentified) {
             items.push({
             name: 'Profil',
             icon: 'fas fa-address-card',

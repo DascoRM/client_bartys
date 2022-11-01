@@ -75,9 +75,7 @@ export default class OSidebar extends Vue {
 
 <style scoped>
 
-.sidebar {
-    max-height: 200px;
-}
+
 .sidebarUp{
     animation: 2s ease-in-out both sidebarUp;
     transition: max-height 200ms;

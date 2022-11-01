@@ -74,8 +74,9 @@ export default class OSidebar extends Vue {
 </script>
 
 <style scoped>
+
 .sidebar {
-    max-height: 100px;
+    max-height: 200px;
 }
 .sidebarUp{
     animation: 2s ease-in-out both sidebarUp;
@@ -90,7 +91,7 @@ export default class OSidebar extends Vue {
        max-height: 80px;
     }
     from {
-        max-height: 380px;
+        max-height: 550px;
     }
 }
 @keyframes sidebarDown {
@@ -98,7 +99,7 @@ export default class OSidebar extends Vue {
        max-height: 80px;
     }
     from {
-        max-height: 380px;
+        max-height: 550px;
     }
 }
 

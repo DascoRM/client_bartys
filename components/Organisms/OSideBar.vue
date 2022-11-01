@@ -6,12 +6,12 @@
             </div>
             <div>
                 <p class="font-dynapuff text-xl">
-                    Click
+                    Bartys
                 </p>
             </div>
         </div>
 
-        <div class="bg-blueDark text-white w-50 h-50 rounded-borderDown flex flex-col items-center justify-start pt-20">
+        <div class="bg-blueLight text-white w-50 h-50 rounded-borderDown flex flex-col items-center justify-start pt-20">
             <div 
                 v-for="item in itemsMenu" 
                 :key="item.id"
@@ -75,7 +75,7 @@ export default class OSidebar extends Vue {
 
 <style scoped>
 .sidebar {
-    max-height: 50px;
+    max-height: 100px;
 }
 .sidebarUp{
     animation: 2s ease-in-out both sidebarUp;

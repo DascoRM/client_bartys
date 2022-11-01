@@ -21,19 +21,19 @@
                     </button>
                     <div class="py-6 px-6 lg:px-8">
                         <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Connectez-vous !</h3>
-                        <form class="space-y-6" action="#">
+                        <form class="space-y-6">
                             <div>
                                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Votre e-mail</label>
-                                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-default focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
+                                <input v-model="loginSync.identifier" type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-default focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
                             </div>
                             <div>
                                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Votre mot de passe</label>
-                                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-default focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="">
+                                <input v-model="loginSync.password" type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-default focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="">
                             </div>
                             <div class="flex justify-between">
                                 <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Mot de pase perdu ?</a>
                             </div>
-                            <AButtonBase title="Connectez-vous" />
+                            <AButtonBase @click.native="$emit('sendLogged', loginSync)" type="button" title="Connectez-vous" />
                             <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
                                 Pas enregistré ? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Créer un compte</a>
                             </div>
@@ -46,8 +46,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import AButtonBase from '../../Atoms/button/AButtonBase.vue';
+import { Component, Vue } from 'vue-property-decorator'
+import { Auth } from '~/store/authentification'
+import AButtonBase from '../../Atoms/button/AButtonBase.vue'
 
 @Component({
     components: {
@@ -56,6 +57,7 @@ import AButtonBase from '../../Atoms/button/AButtonBase.vue';
 })
 export default class MModalLogin extends Vue {
     public activeModal = true
+    public loginSync: Auth = { identifier: '', password: ''}
 }
 </script>
 

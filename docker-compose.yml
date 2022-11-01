@@ -17,7 +17,7 @@ services:
     labels:
       - "traefik.enable=true"
       # URL pour accéder à ce conteneur
-      - "traefik.http.routers.nuxt_docker.rule=Host(`click.docker.localhost`)"
+      - "traefik.http.routers.nuxt_docker.rule=Host(`bartys.docker.localhost`)"
       # Activation de TLS
       - "traefik.http.routers.nuxt_docker.tls=true"
       # Si le port est différent de 80, utilisez le service suivant:

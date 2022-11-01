@@ -5,12 +5,14 @@
 </template>
 
 <script lang="ts">
-    import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
-    @Component
-    export default class LoginPage extends Vue {
-        
+@Component
+export default class LoginPage extends Vue {
+    layout() {
+        return 'login'
     }
+}
 </script>
 
 <style scoped>

@@ -24,9 +24,8 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { authentificationModule } from '~/store';
 import { Sidebar } from '~/store/DTO/dtoComponent';
-
+//Store
 
 @Component
 export default class AMenuAction extends Vue {
@@ -37,12 +36,6 @@ export default class AMenuAction extends Vue {
      */
     public activeMenu() {
         this.active = !this.active
-        this.itemsMenu.forEach((item: any) => {
-         if(item.name === 'Login') {
-            authentificationModule.changeAuthenficated()
-            console.log(authentificationModule.isAuthentified)
-         }
-        });
     }
 }
 </script>

@@ -29,14 +29,13 @@
        </l-map>
      </client-only>
     </div>
-    </template>
-    <script lang="ts">
-    import { Component, Vue} from 'nuxt-property-decorator'
-    import { Bar, BarResponse } from '~/store/bar'
-    import { Club, ClubResponse } from '~/store/club'
-    import { activitieModule, barModule, clubModule } from '~/utils/store-accessor'
+</template>
+<script lang="ts">
+    import { Component, getModule, Vue} from 'nuxt-property-decorator'
+    import BarModule, { BarResponse } from '~/store/bar'
+    import ClubModule, { ClubResponse } from '~/store/club'
     //Interfaces
-    import { ActivitieStatut } from '../../../client/store/activitie'
+    import ActivitiesModule, { ActivitieStatut } from '~/store/activitie'
     
     //Atoms
     import AMarker from '../Atoms/marker/AMarker.vue'
@@ -47,6 +46,11 @@
         }
     })
     export default class OMap extends Vue {
+        public barModule = getModule(BarModule, this.$store)
+        public clubModule = getModule(ClubModule, this.$store)
+        public activitieModule = getModule(ActivitiesModule, this.$store)
+
+
         public refMap = this.$refs.refMap
     
         public map = {
@@ -72,16 +76,16 @@
         }
         async created() {
            await Promise.all([
-                barModule.fetchAll(),
-                clubModule.fetchAll()
+                this.barModule.fetchAll(),
+                this.clubModule.fetchAll()
             ])
             //inject inside variables
-            this.bars = barModule.bars
-            this.clubs = clubModule.clubs
-            this.activitiesStatut = activitieModule.activitiesStatut
+            this.bars = this.barModule.bars
+            this.clubs = this.clubModule.clubs
+            this.activitiesStatut = this.activitieModule.activitiesStatut
         }
         public get activitieStatus() {
-            return activitieModule.activitiesStatut
+            return this.activitieModule.activitiesStatut
         }
         
     }

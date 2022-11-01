@@ -35,24 +35,34 @@ export interface ForgotPassword {
     password: string
     passwordConfirmation: string
     code: string
-
 }
+
 @Module({ namespaced: true, name: 'authentification' })
 export default class AuthetificationModule extends VuexModule {
-    public isAuthentified = true
+    public isAuthentified = false
     public loggedIn: boolean = true
     public user!: User
     public userMe!: ResponseApiAuth
     public forgottenPassword!: ForgotPassword
 
+    public auth: Auth = {
+        identifier: '',
+        password: ''
+    }
+
     @Mutation
-    public changeAuthenficated() {
+    changeAuthenficated() {
         this.isAuthentified = !this.isAuthentified
+    }
+    @Mutation
+    saveUser(userMe: ResponseApiAuth) {
+        this.userMe = userMe
     }
 
     @Action({ commit: 'saveUser'})
     public async login(auth: Auth): Promise<ResponseApiAuth> {
         const { data } = await $axios.post('/auth/local', auth)
+        console.log(data)
         return data
     }
 

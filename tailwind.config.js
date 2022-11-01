@@ -16,7 +16,7 @@ module.exports = {
            dynapuff: ['DynaPuff', 'cursive'], //from main.css
         },
         fontSize: {
-            big: '3r    em',
+            big: '3rem',
             title: '1.563rem',
             subtitle: '0.9rem',
             min: '0.4rem'

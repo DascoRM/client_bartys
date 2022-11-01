@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
+import { Component, Vue } from 'nuxt-property-decorator'
 //Molecules
 import MFooter from '~/components/Molecules/footer/MFooter.vue'
 @Component({
@@ -14,7 +14,7 @@ import MFooter from '~/components/Molecules/footer/MFooter.vue'
         MFooter
     }
 })
-export default class LayoutLogin  extends Vue {
+export default class LayoutLogin extends Vue {
 
 }
 </script>

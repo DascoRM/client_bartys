@@ -24,6 +24,8 @@ export default class  extends Vue {
     @Prop() label!: string
     @Prop() placeholder!: string
     @Prop({ default: 4 }) rows?: number
+    
+    public value?: string = ''
 }
 </script>
 

@@ -24,7 +24,9 @@ export default class AInputField extends Vue {
     @Prop() type?: string
     @Prop() label!: string
     @Prop() placeholder!: string
-    public value: string = ' '
+    
+   public value?: string = ''
+
 }
 </script>
 

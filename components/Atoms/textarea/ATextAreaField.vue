@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center items-center flex-col w-1/3 mb-5">
+    <div class="flex justify-center items-center flex-col w-2/3 md:w-1/3 mb-5">
         <label 
         :for="label"
         class="block mb-2 text-title font-dynapuff text-blueDark dark:text-gray-300">

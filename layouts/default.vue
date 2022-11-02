@@ -3,7 +3,7 @@
         <OSidebar class="z-40 fixed w-3/12 md:w-1/12" />
         <OMenuAction />
         <!-- <OModalLogin class="z-50 relative" v-if="!authentified" /> -->
-        <Nuxt class="z-0 relative top-0 right-0 w-full" />
+        <Nuxt class="z-0 relative top-0 right-0 w-10/12 my-auto mx-auto" />
         <MFooter />
     </div>
 </template>

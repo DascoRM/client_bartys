@@ -14,8 +14,8 @@
                 </MOverlayLeft>
             </div>
         </div>
-        <div class="bg-white h-screen w-full md:w-2/3">
-            <MContact class="w-full" />
+        <div class="bg-white h-screen w-full flex items-center md:w-2/3">
+            <MContact @sendMessage="sendMessage" class="w-full" />
         </div>
     </div>
 </template>
@@ -25,7 +25,7 @@ import { Component, Vue } from 'vue-property-decorator'
 //Atoms
 import ATitleBase from '@/components/Atoms/title/ATitleBase.vue'
 //Molecules
-import MContact from '@/components/Molecules/contact/MContact.vue'
+import MContact, { Message } from '@/components/Molecules/contact/MContact.vue'
 import MOverlayLeft from '@/components/Molecules/overlay/MOverlayLeft.vue'
 
 @Component({
@@ -36,7 +36,9 @@ import MOverlayLeft from '@/components/Molecules/overlay/MOverlayLeft.vue'
     }
 })
 export default class OContact extends Vue {
-    
+    public sendMessage(message: Message) {
+        console.log(message)
+    }
 }
 </script>
 

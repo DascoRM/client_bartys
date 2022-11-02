@@ -5,23 +5,26 @@
         class="block mb-2 text-title font-dynapuff text-blueDark dark:text-gray-300">
             {{ label }}
         </label>
-        <input 
+        <input
             :type="type" 
             :id="label" 
             class="w-full bg-blueDark border border-gray-300 text-white text-sm rounded-default focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-            :placeholder="placeholder" 
+            :placeholder="placeholder"
+            v-model="value"
+            @input="$emit('update', value)"
             required>
     </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, PropSync, Vue } from 'vue-property-decorator';
 
 @Component
 export default class AInputField extends Vue {
     @Prop() type?: string
     @Prop() label!: string
     @Prop() placeholder!: string
+    public value: string = ' '
 }
 </script>
 

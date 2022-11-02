@@ -27,6 +27,11 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class MOverlayLeft extends Vue {
     private icons = ['beer.png', 'club.png']
 
+    /**
+     * @function generateIcon
+     * @description
+     * return name icon for display random file
+     */
     private get generateIcon() {
         const random = Math.floor(Math.random() * (this.icons.length))
         return this.icons[random]

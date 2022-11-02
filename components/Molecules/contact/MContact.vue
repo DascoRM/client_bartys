@@ -4,7 +4,7 @@
         <AInputField :type="name" label="Votre nom" placeholder="Jean mi" />
         <AInputField :type="mail" label="E-mail" placeholder="exemple@gmail.com" />
         <ATextAreaField label="Message" placeholder="Écrivez ce qu'il vous plait." />
-        <AButtonBase class="w-1/3" title="Envoyez"/>
+        <AButtonBase title="Envoyez"/>
     </div>
 </template>
 

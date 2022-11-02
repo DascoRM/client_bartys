@@ -37,7 +37,8 @@ import MOverlayLeft from '@/components/Molecules/overlay/MOverlayLeft.vue'
 })
 export default class OContact extends Vue {
     public sendMessage(message: Message) {
-        console.log(message)
+        //Todo add request
+        return
     }
 }
 </script>

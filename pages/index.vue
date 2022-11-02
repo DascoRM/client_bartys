@@ -7,5 +7,8 @@
 
   @Component
   export default class IndexPage extends Vue {
+    layout() {
+      return 'map'
+    }
   }
 </script>

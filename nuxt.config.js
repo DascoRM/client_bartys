@@ -94,6 +94,7 @@ export default {
     whitelistPatternsChildren: [/leaflet-.+$/]
   },
   alias: {
+    'icon': resolve(__dirname, './assets/icon'),
     'img': resolve(__dirname, './assets/img'),
   },
   // PWA module configuration: https://go.nuxtjs.dev/pwa

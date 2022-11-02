@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts">
-import { Component, PropSync, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { activitieModule } from '~/store';
 
 @Component

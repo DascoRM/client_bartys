@@ -29,7 +29,7 @@
                 <hr class="border-white w-1/2" />
             </div>
             
-            <div v-for="item in itemsMenuRoute">
+            <div v-for="(item, index) in itemsMenuRoute" :key="index">
                 <div class="mb-10">
                     <NuxtLink class="flex flex-col items-center" :to="item.path">
                         <component  class="icon" :is="item.component" />

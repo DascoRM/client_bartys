@@ -8,9 +8,10 @@
                 <!-- Start Bar -->
                 <div v-if="activitieStatus[0].status">
                     {{ bars }}
-                    <div v-for="(bar, key) in bars" :key="key">
+                    <div v-for="bar in bars" :key="bar.id">
                         <AMarker
-                            :marker="{ position: bar.attributes.position, title: bar.attributes.title, hours_opening: bar.attributes.hours_opening }" 
+                            @getPage="returnPageBar"
+                            :marker="{ position: bar.attributes.position, title: bar.attributes.title, hours_opening: bar.attributes.hours_opening, id: bar.id }" 
                             :icon="iconBar"
                         />
                     </div>
@@ -19,8 +20,9 @@
                 <!-- Start Club -->
                 <div v-if="activitieStatus[1].status">
                     <div v-for="(club, key) in clubs" :key="key">
-                        <AMarker 
-                            :marker="{ position: club.attributes.position, title: club.attributes.title, hours_opening: club.attributes.hours_opening }" 
+                        <AMarker
+                            @getPage="returnPageClub"
+                            :marker="{ position: club.attributes.position, title: club.attributes.title, hours_opening: club.attributes.hours_opening, id: club.id }" 
                             :icon="iconClub"
                         />
                     </div>
@@ -36,16 +38,16 @@
     import ClubModule, { ClubResponse } from '~/store/club'
     //Interfaces
     import ActivitiesModule, { ActivitieStatut } from '~/store/activitie'
-    
     //Atoms
     import AMarker from '../Atoms/marker/AMarker.vue'
+    import MixinGloblal from '@/Mixins/global'
     
     @Component({
         components: {
             AMarker
         }
     })
-    export default class OMap extends Vue {
+    export default class OMap extends MixinGloblal {
         public barModule = getModule(BarModule, this.$store)
         public clubModule = getModule(ClubModule, this.$store)
         public activitieModule = getModule(ActivitiesModule, this.$store)
@@ -86,6 +88,13 @@
         }
         public get activitieStatus() {
             return this.activitieModule.activitiesStatut
+        }
+
+        public returnPageBar(marker: any) {
+            this.$router.push(`/bar/${marker.id}`)
+        }
+        public returnPageClub(marker: any) {
+            this.$router.push(`/club/${marker.id}`)
         }
         
     }

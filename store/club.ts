@@ -24,7 +24,7 @@ export interface Position {
 }
 @Module({ namespaced: true, name: 'club' })
 export default class ClubModule extends VuexModule {
-  club!: Club
+  club = {} as ClubResponse
   clubs: ClubResponse[] = []
 
   @Mutation
@@ -32,7 +32,7 @@ export default class ClubModule extends VuexModule {
     this.clubs = clubs
   }
   @Mutation
-  saveOne(club: Club) {
+  saveOne(club: ClubResponse) {
     this.club = {...this.club, ...club}
   }
 
@@ -43,7 +43,7 @@ export default class ClubModule extends VuexModule {
   }
 
   @Action({ commit: 'saveOne' })
-  async fetchOne(id: number):Promise<ResponseClub> {
+  async fetchOne(id: string):Promise<ResponseClub> {
     const { data } = await $axios.get(`/clubs/${id}`)
     return data.data
   }

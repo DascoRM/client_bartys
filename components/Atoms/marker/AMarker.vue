@@ -4,7 +4,7 @@
         :lat-lng="[+marker.position.lat, +marker.position.long]"
         >
         <l-icon :icon-url="icon.url" :icon-size="icon.size" />
-        <l-popup>
+        <l-popup @click.native="$emit('getPage', marker)">
             <div class="flex justify-center">
                 <h1 class="font-bold">{{ marker.title }}</h1>
             </div>

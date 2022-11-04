@@ -62,7 +62,6 @@ export default class AuthetificationModule extends VuexModule {
     @Action({ commit: 'saveUser'})
     public async login(auth: Auth): Promise<ResponseApiAuth> {
         const { data } = await $axios.post('/auth/local', auth)
-        console.log(data)
         return data
     }
 

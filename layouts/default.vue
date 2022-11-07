@@ -1,6 +1,6 @@
 <template>
     <div class="bg-blueDark">
-        <OSidebar class="z-40 fixed w-3/12 md:w-1/12" />
+        <OMenu class="z-40 w-full bottom-0 md:top-0 md:bottom-auto" />
         <OMenuAction />
         <!-- <OModalLogin class="z-50 relative" v-if="!authentified" /> -->
         <Nuxt class="z-0 relative top-0 right-0 w-10/12 my-auto mx-auto" />
@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { Component, getModule, Vue } from 'nuxt-property-decorator'
-import OSidebar from '../components/Organisms/OSideBar.vue'
+import OMenu from '../components/Organisms/OMenu.vue'
 import OMenuAction from '../components/Organisms/OMenuAction.vue'
 import OModalLogin from '~/components/Organisms/OModalLogin.vue'
 //Molecules
@@ -20,7 +20,7 @@ import AuthetificationModule from '~/store/authentification'
 
 @Component({
     components: {
-        OSidebar,
+        OMenu,
         OMenuAction,
         OModalLogin,
         MFooter

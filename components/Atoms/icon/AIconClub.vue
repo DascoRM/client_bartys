@@ -50,13 +50,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import { activitieModule } from '~/store';
+import { Component, Vue, getModule } from 'nuxt-property-decorator'
+import ActivitiesModule from '~/store/activitie'
 
 @Component
 export default class AIconClub extends Vue {
+    public activitieModule = getModule(ActivitiesModule, this.$store)
+
     public get activitieStatus() {
-        return activitieModule.activitiesStatut[1].status
+        return this.activitieModule.activitiesStatut[1].status
     }
 
 }

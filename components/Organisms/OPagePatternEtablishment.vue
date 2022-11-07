@@ -24,14 +24,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, PropSync, Vue } from 'vue-property-decorator'
+import { Component, PropSync, Vue } from 'vue-property-decorator'
 //Atoms
 import ATitleBase from '@/components/Atoms/title/ATitleBase.vue'
 import ASubtitle from '@/components/Atoms/title/ASubtitle.vue'
 import ATimeLine from '@/components/Atoms/timeline/ATimeline.vue'
 //Interfaces
-import { Bar, BarResponse } from '~/store/bar'
-import { Club, ClubResponse } from '~/store/club'
+import { Bar } from '~/store/bar'
+import { Club } from '~/store/club'
 import AIconBar from '../Atoms/icon/AIconBar.vue'
 import { Card, EnumColor } from '~/store/DTO/dtoCard'
 import AIconClub from '../Atoms/icon/AIconClub.vue'

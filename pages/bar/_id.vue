@@ -1,5 +1,5 @@
 <template>
-    <div v-show="bar">
+    <div v-if="bar">
         <OPagePatternEtablishment :etablishment.sync="bar" />
     </div>
 </template>

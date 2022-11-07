@@ -1,5 +1,5 @@
 <template>
-    <div v-show="club">
+    <div v-if="club">
         <OPagePatternEtablishment :etablishment.sync="club" />
     </div>
 </template>

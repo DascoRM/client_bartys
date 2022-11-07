@@ -1,15 +1,15 @@
 <template>
-    <div>
-        <OPagePatternEtablishment :etablishment="clubModule.club.attributes" />
+    <div v-show="club">
+        <OPagePatternEtablishment :etablishment.sync="club" />
     </div>
 </template>
 
 <script lang="ts">
 import { getModule } from 'nuxt-property-decorator'
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Watch } from 'vue-property-decorator'
 //Organisms
 import OPagePatternEtablishment from '@/components/Organisms/OPagePatternEtablishment.vue'
-import ClubModule from '~/store/club'
+import ClubModule, { Club } from '~/store/club'
 
 @Component({
     components: {
@@ -18,13 +18,19 @@ import ClubModule from '~/store/club'
 })
 export default class ClubId extends Vue {
     public clubModule = getModule(ClubModule, this.$store)
-
+    public club = {} as Club
     created() {
-        this.getBar()
+        this.getClub()
     }
-    public async getBar() {
+    public async getClub() {
         await this.clubModule.fetchOne(this.$route.params.id)
     }
+    @Watch('clubModule.club', { immediate: true })
+    onChange() {
+        this.club = this.clubModule.club.attributes
+    }
+    
+
 
 }
 </script>

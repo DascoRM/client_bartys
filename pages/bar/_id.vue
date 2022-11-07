@@ -1,13 +1,13 @@
 <template>
-    <div>
-        <OPagePatternEtablishment :etablishment="barModule.bar.attributes" />
+    <div v-show="bar">
+        <OPagePatternEtablishment :etablishment.sync="bar" />
     </div>
 </template>
 
 <script lang="ts">
 import { getModule } from 'nuxt-property-decorator'
-import { Component, Vue } from 'vue-property-decorator'
-import BarModule, { Bar } from '~/store/bar'
+import { Component, Vue, Watch } from 'vue-property-decorator'
+import BarModule, { Bar, BarResponse } from '~/store/bar'
 //Organisms
 import OPagePatternEtablishment from '@/components/Organisms/OPagePatternEtablishment.vue'
 
@@ -18,17 +18,19 @@ import OPagePatternEtablishment from '@/components/Organisms/OPagePatternEtablis
 })
 export default class BarId extends Vue {
     public barModule = getModule(BarModule, this.$store)
-
+    public bar = {} as Bar
     created() {
         this.getBar()
     }
     public async getBar() {
         await this.barModule.fetchOne(this.$route.params.id)
     }
+    @Watch('barModule.bar', { immediate: true })
+    onChange() {
+        this.bar = this.barModule.bar.attributes
+    }
 
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

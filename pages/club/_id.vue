@@ -29,6 +29,9 @@ export default class ClubId extends Vue {
     onChange() {
         this.club = this.clubModule.club.attributes
     }
+    destroyed() {
+        this.clubModule.clearClub()
+    }
     
 
 

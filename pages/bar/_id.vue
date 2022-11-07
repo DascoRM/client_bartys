@@ -29,6 +29,9 @@ export default class BarId extends Vue {
     onChange() {
         this.bar = this.barModule.bar.attributes
     }
+    destoyed() {
+        this.barModule.clearBar()
+    }
 
 }
 </script>

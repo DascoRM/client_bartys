@@ -1,7 +1,8 @@
 <template>
     <button 
-        :type="type" 
-        class="w-2/3 md:w-1/3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-default text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        :type="type"
+        :class="color"
+        class="text-white focus:ring-4 font-medium rounded-default text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             {{ title }}
         </button>
 </template>
@@ -13,6 +14,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class AButtonBase extends Vue {
     @Prop() title!: string
     @Prop() type?: string
+    @Prop({ default: 'bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-blue-300 '}) color?: string
 }
 </script>
 

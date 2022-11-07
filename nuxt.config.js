@@ -56,6 +56,12 @@ export default {
     'nuxt-leaflet',
     '@nuxtjs/auth-next'
   ],
+  pageTransition: "fade",
+
+  layoutTransition: {
+    name: "fade",
+    mode: "in-out"
+},
   // router: {
   //   middleware: ['auth']
   // },

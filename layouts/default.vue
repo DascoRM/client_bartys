@@ -1,9 +1,9 @@
 <template>
     <div class="bg-blueDark">
-        <OMenu class="z-40 w-full bottom-0 md:top-0 md:bottom-auto" />
+        <OMenu class="z-40 w-full fixed md:relative bottom-0 md:top-0 md:bottom-auto" />
         <OMenuAction />
         <!-- <OModalLogin class="z-50 relative" v-if="!authentified" /> -->
-        <Nuxt class="z-0 relative top-0 right-0 w-10/12 my-auto mx-auto" />
+            <Nuxt class="z-0 relative top-0 right-0 w-10/12 my-auto mx-auto" />
         <MFooter />
     </div>
 </template>
@@ -31,11 +31,10 @@ export default class LayoutDefault  extends Vue {
     public get authentified() {
         return this.authentificationModule.isAuthentified
     }
+    transition(){
+        return 'fade'
+    }
 }
 </script>
 
-<style>
-/* body {
-    background: var(--blueDark);
-} */
-</style>
+<style></style>

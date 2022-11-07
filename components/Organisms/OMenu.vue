@@ -9,8 +9,8 @@
         </div>
         <div class="inline-flex justify-center items-center w-full my-1 md:my-5">
             <div 
-                v-for="item in itemsMenu" 
-                :key="item.id"
+                v-for="(item, key) in itemsMenu" 
+                :key="key"
                 class="w-full"
                 >
                 <div>
@@ -22,13 +22,11 @@
             </div>
             
             <div 
-                v-for="(item, index) in itemsMenuRoute" 
-                :key="index"
                 class="w-full">
                 <div>
-                    <NuxtLink class="flex flex-col items-center" :to="item.path">
-                        <component  class="icon" :is="item.component" />
-                        <p class="text-xs font-dynapuff">{{ item.title }}</p>
+                    <NuxtLink class="flex flex-col items-center" :to="itemsMenuRoute.path">
+                        <component  class="icon" :is="itemsMenuRoute.component" />
+                        <p class="text-xs font-dynapuff">{{ itemsMenuRoute.title }}</p>
                     </NuxtLink>
                 </div>
             </div>
@@ -54,14 +52,13 @@ import AButtonRedirect from '@/components/Atoms/button/AButtonRedirect.vue'
 export default class OMenu extends Vue {
     public activitieModule = getModule(ActivitiesModule, this.$store)
 
-    public itemsMenuRoute = [
-        {
+    public itemsMenuRoute = {
             name: 'Events',
             path: '/event',
             title: 'Actus',
             component: AIconEvent
         }
-    ]
+
     public get itemsMenu() {
         return this.activitieModule.activitiesStatut
     }

@@ -35,6 +35,10 @@ export default class BarModule extends VuexModule {
   saveOne(bar: BarResponse) {
     this.bar = { ...this.bar, ...bar }
   }
+  @Mutation
+  clearBar() {
+    this.bar = {} as BarResponse
+  }
 
   @Action({ commit: 'saveAll'})
   async fetchAll():Promise<BarResponse> {

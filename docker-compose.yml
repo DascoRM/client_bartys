@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3"
 services:
   nuxt_docker:
     container_name: nuxt_docker
@@ -31,3 +31,4 @@ volumes:
 networks:
   proxy:
     external: true
+    

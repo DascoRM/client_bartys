@@ -29,14 +29,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import { activitieModule } from '~/store';
+import { Component, Vue , getModule } from 'nuxt-property-decorator'
+import ActivitiesModule from '~/store/activitie'
 
 @Component
 export default class AIconBar extends Vue {
+    public activitieModule = getModule(ActivitiesModule, this.$store)
 
     public get activitieStatus() {
-        return activitieModule.activitiesStatut[0].status
+        return this.activitieModule.activitiesStatut[0].status
     }
 
 }
@@ -54,7 +55,6 @@ export default class AIconBar extends Vue {
     height:38px;
     animation: upBeer ease-out 2s normal forwards;
 }
-
 
 @keyframes upBeer {
     0% {

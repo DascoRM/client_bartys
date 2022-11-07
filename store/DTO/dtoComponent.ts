@@ -8,7 +8,8 @@ export interface Sidebar {
 export interface AMarkerType {
   position: number []
   title: string
-  hours_opening: string
+  hours_opening: string,
+  id: number
 }
 
 export interface IconMarker {

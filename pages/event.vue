@@ -45,6 +45,7 @@ import AIconEvent from '~/components/Atoms/icon/AIconEvent.vue'
     }
 })
 export default class EventPage extends Vue {
+  //todo put that o organism
   public bestMoment: Card = {
     id: '0',
     category: AIconBar,

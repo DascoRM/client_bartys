@@ -8,7 +8,7 @@ export interface ResponseBar {
 }
 export interface BarResponse {
   attributes: Bar
-  id: number
+  id: number | null
 }
 export interface Bar {
   title: string
@@ -22,9 +22,9 @@ export interface Position {
   lat: number
   long: number
 }
-@Module({ namespaced: true, name: 'bar' })
+@Module({ namespaced: true, name: 'bar', stateFactory: true})
 export default class BarModule extends VuexModule {
-  bar!: Bar
+  bar = {} as BarResponse
   bars: BarResponse[] = []
 
   @Mutation
@@ -32,18 +32,18 @@ export default class BarModule extends VuexModule {
     this.bars = bars
   }
   @Mutation
-  saveOne(bar: Bar) {
-    this.bar = {...this.bar, ...bar}
+  saveOne(bar: BarResponse) {
+    this.bar = { ...this.bar, ...bar }
   }
 
   @Action({ commit: 'saveAll'})
-  async fetchAll():Promise<ResponseBar> {
+  async fetchAll():Promise<BarResponse> {
     const { data } = await $axios.get('/bars')
     return data.data
   }
 
   @Action({ commit: 'saveOne' })
-  async fetchOne(id: number):Promise<ResponseBar> {
+  async fetchOne(id: string):Promise<BarResponse> {
     const { data } = await $axios.get(`/bars/${id}`)
     return data.data
   }

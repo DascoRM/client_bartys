@@ -1,9 +1,9 @@
 <template>
     <footer class="p-4 bg-blueDark rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
         <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
+            <NuxtLink class="flex items-center mb-4 sm:mb-0" to="/">
                 <img class="rounded-t-default w-20" :src="require('img/logo_click.png')" alt="logo bartys" />
-            </a>
+            </NuxtLink>
             <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
                 <li v-for="(item, key) in footers" :key="key">
                     <NuxtLink :to="item.path" >

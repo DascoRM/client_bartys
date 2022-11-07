@@ -1,15 +1,15 @@
 <template>
     <div>
         <div class="pt-10 mb-10">
-            <ATitleBase :title="etablishment.title" />
-            <p v-show="etablishment.categories">
-                {{ etablishment.categories }}
+            <ATitleBase :title="etablishmentSync.title" />
+            <p v-show="etablishmentSync.categories">
+                {{ etablishmentSync.categories }}
             </p>
-            <p>{{ etablishment.adress }}</p>
+            <p>{{ etablishmentSync.adress }}</p>
         </div>
         <div class="mb-10">
             <ASubtitle title="Horaires:" />
-            <p>{{ etablishment.hours_opening }}</p>
+            <p>{{ etablishmentSync.hours_opening }}</p>
         </div>
         <div class="mb-5 inline-flex items-start w-full">
             <div class="overflow-hidden w-1/2">
@@ -24,14 +24,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Prop, PropSync, Vue } from 'vue-property-decorator'
 //Atoms
 import ATitleBase from '@/components/Atoms/title/ATitleBase.vue'
 import ASubtitle from '@/components/Atoms/title/ASubtitle.vue'
 import ATimeLine from '@/components/Atoms/timeline/ATimeline.vue'
 //Interfaces
-import { Bar } from '~/store/bar'
-import { Club } from '~/store/club'
+import { Bar, BarResponse } from '~/store/bar'
+import { Club, ClubResponse } from '~/store/club'
 import AIconBar from '../Atoms/icon/AIconBar.vue'
 import { Card, EnumColor } from '~/store/DTO/dtoCard'
 import AIconClub from '../Atoms/icon/AIconClub.vue'
@@ -46,7 +46,7 @@ import AIconEvent from '../Atoms/icon/AIconEvent.vue'
     }
 })
 export default class OPagePatternEtablishment extends Vue {
-    @Prop() etablishment = {} as Bar | Club
+    @PropSync('etablishment') etablishmentSync!: Bar | Club
     public bestMoment: Card = {
     id: '0',
     category: AIconBar,

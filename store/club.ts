@@ -35,6 +35,10 @@ export default class ClubModule extends VuexModule {
   saveOne(club: ClubResponse) {
     this.club = {...this.club, ...club}
   }
+  @Mutation
+  clearClub() {
+    this.club = {} as ClubResponse
+  }
 
   @Action({ commit: 'saveAll'})
   async fetchAll():Promise<ResponseClub> {

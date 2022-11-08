@@ -1,13 +1,8 @@
 <template>
     <div>
-      <div class="header z-0 h-96 w-full bg-transparent overflow-hidden flex justify-center md:justify-end">
-        <!-- <img class="md:w-1/2 w-auto" :src="require('img/event.jpg')" alt=""> -->
-      </div>
-      <div>
-        <h2 class="font-dynapuff text-big">
-          Évenements
-        </h2>
-      </div>
+      <!-- <div class="header z-0 h-96 w-full bg-transparent overflow-hidden flex justify-center md:justify-end">
+        <img class="md:w-1/2 w-auto" :src="require('img/event.jpg')" alt="">
+      </div> -->
      <div>
       <div class="relative">
         <h3 class="z-50 relative font-dynapuff text-big my-10 text-shadow">

@@ -32,7 +32,7 @@ export default class ActivitiesModule extends VuexModule {
     {
       id: 2,
       title: 'Restos',
-      icon: 'beer.png',
+      icon: 'club.png',
       component: AIconClub,
       status: true
     }

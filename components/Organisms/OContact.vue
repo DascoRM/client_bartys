@@ -4,7 +4,7 @@
             <div class="h-screen flex items-center">
                 <MOverlayLeft>
                      <template v-slot:title>
-                        <ATitleBase title="Contact"/>
+                        <ATitleBase colorText="white    " title="Contact"/>
                      </template>
                      <template v-slot:body>
                         <p>

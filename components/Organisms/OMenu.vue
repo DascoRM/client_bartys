@@ -35,9 +35,9 @@
                 </div>
             </div>
         </div>
-        <div class="hidden md:flex justify-center items-center mx-2">
-            <AButtonRedirect to="/signup" class="w-1/auto" title="Insciption" color="bg-white border-blueLight text-blueLight" />
-            <AButtonRedirect to="/login" class="w-1/auto" title="Connection" />
+        <div class="hidden md:flex justify-center items-center mx-2 px-5">
+            <AButtonRedirect to="/signup" title="Insciption" color="w-1/auto bg-white border-blueLight text-blueLight w-1/auto" />
+            <AButtonRedirect to="/login" title="Connection"  class="w-1/auto shadow-button" />
         </div>
         </div>
 </template>

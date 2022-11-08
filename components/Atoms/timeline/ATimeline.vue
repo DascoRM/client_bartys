@@ -1,6 +1,6 @@
 <template>
-    <ol class="relative border-l border-gray-200 dark:border-gray-700">                  
-        <li v-for="(item, key) in timelines" :key="key" class="mb-10 ml-4">
+    <ol class="mb-5 relative border-l border-gray-200 dark:border-gray-700">                  
+        <li v-for="(item, key) in timelines" :key="key" class="mb-10 ml-4 bg-white shadow-xl p-5 rounded-default">
             <div>
                 <component class="icon rounded-full border boder-black p-1" :is="item.category" />                
             </div>

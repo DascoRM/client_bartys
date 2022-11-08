@@ -10,7 +10,7 @@
       </div>
      <div>
       <div class="relative">
-        <h3 class="z-50 relative font-dynapuff text-big my-10">
+        <h3 class="z-50 relative font-dynapuff text-big my-10 text-shadow">
           Catégories
         </h3>
         <div class="z-0 absolute top-0 left-0 h-20 w-56 bg-yellow-400"></div>
@@ -21,18 +21,18 @@
           <!-- END BestMoments -->
           <!-- ClubMoments -->
         <MCardBasic :bestMoment="clubMoment" />
-          <!-- END ClubMoments -->
-          <!-- Association -->
-          <MCardBasic :bestMoment="assoMoment" />
-          <!-- END Association -->
+        <!-- END ClubMoments -->
+        <!-- Association -->
+        <MCardBasic :bestMoment="assoMoment" />
+        <!-- END Association -->
       </div>
      </div>
      <div class="flex justify-start flex-col mt-10">
         <div class="relative">
-          <h3 class="z-50 relative font-dynapuff text-big my-10">
+          <h3 class="z-50 relative font-dynapuff text-big my-10 text-shadow">
               Évenements
           </h3>
-          <div class="z-0 absolute top-0 left-0 h-20 w-28 bg-green-400"></div>
+          <div class="z-0 absolute top-5 left-10 h-20 w-28 bg-green-400"></div>
         </div>
         <MTimelineEvent :timelines="timelines" />
      </div>

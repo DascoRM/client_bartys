@@ -3,21 +3,37 @@
       <div class="header z-0 h-96 w-full bg-transparent overflow-hidden flex justify-center md:justify-end">
         <!-- <img class="md:w-1/2 w-auto" :src="require('img/event.jpg')" alt=""> -->
       </div>
-      <h1 class="font-dynapuff md:top-40 md:left-40 md:absolute top-0 z-50 p-5 text-big">
-        Evenement à venir
-      </h1>
-     <div class="flex justify-around flex-col sm:flex-row">
-       <!-- BestMoments -->
-       <MCardBasic :bestMoment="bestMoment" />
-        <!-- END BestMoments -->
-         <!-- ClubMoments -->
-       <MCardBasic :bestMoment="clubMoment" />
-        <!-- END ClubMoments -->
-        <!-- Association -->
-        <MCardBasic :bestMoment="assoMoment" />
-        <!-- END Association -->
+      <div>
+        <h2 class="font-dynapuff text-big">
+          Évenements
+        </h2>
+      </div>
+     <div>
+      <div class="relative">
+        <h3 class="z-50 relative font-dynapuff text-big my-10">
+          Catégories
+        </h3>
+        <div class="z-0 absolute top-0 left-0 h-20 w-56 bg-yellow-400"></div>
+      </div>
+      <div class="flex justify-around flex-col sm:flex-row">
+         <!-- BestMoments -->
+        <MCardBasic :bestMoment="bestMoment" />
+          <!-- END BestMoments -->
+          <!-- ClubMoments -->
+        <MCardBasic :bestMoment="clubMoment" />
+          <!-- END ClubMoments -->
+          <!-- Association -->
+          <MCardBasic :bestMoment="assoMoment" />
+          <!-- END Association -->
+      </div>
      </div>
-     <div class="flex justify-start ml-10 flex-col sm:flex-row mt-10">
+     <div class="flex justify-start flex-col mt-10">
+        <div class="relative">
+          <h3 class="z-50 relative font-dynapuff text-big my-10">
+              Évenements
+          </h3>
+          <div class="z-0 absolute top-0 left-0 h-20 w-28 bg-green-400"></div>
+        </div>
         <MTimelineEvent :timelines="timelines" />
      </div>
     </div>

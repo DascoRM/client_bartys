@@ -20,6 +20,13 @@ body {
     width: 40px;
     height: 40px;
 }
+/* Shadow */
+.text-shadow {
+  text-shadow: 8px 8px #ffff;
+}
+.shadow-button {
+  box-shadow: 8px 8px 0px #132A44;
+}
 /* Transition page */
 .fade-enter-active,
 .fade-leave-active {

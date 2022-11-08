@@ -18,7 +18,7 @@
                         <component @click.native="clickToCall(item)"  class="icon" :is="item.component" />
                         <p 
                             class="text-xs font-dynapuff" 
-                            :class="[item.status ? 'border-b-4 border-blueDark rounded-lg text-black-600' : 'text-gray-500']">
+                            :class="item.status ? 'border-b-4 border-blueDark rounded-lg text-black-600' : 'text-gray-500'">
                             {{ item.title }}
                         </p>
                     </NuxtLink>
@@ -29,8 +29,11 @@
                 class="w-full">
                 <div>
                     <NuxtLink class="flex flex-col items-center" :to="itemsMenuRoute.path">
-                        <component  class="icon" :is="itemsMenuRoute.component" />
-                        <p class="text-xs font-dynapuff">{{ itemsMenuRoute.title }}</p>
+                        <component @click.native="activePage"  class="icon" :is="itemsMenuRoute.component" />
+                        <p 
+                            class="text-xs font-dynapuff"
+                            :class="itemsMenuRoute.status ? 'border-b-4 border-blueDark rounded-lg text-black-600' : 'text-gray-500'"
+                            >{{ itemsMenuRoute.title }}</p>
                     </NuxtLink>
                 </div>
             </div>
@@ -60,6 +63,7 @@ export default class OMenu extends Vue {
             name: 'Events',
             path: '/event',
             title: 'Actus',
+            status: false,
             component: AIconEvent
         }
 
@@ -68,6 +72,10 @@ export default class OMenu extends Vue {
     }
     public clickToCall(item: ActivitieStatut) {
         this.activitieModule.changeStatut(item)
+    }
+    public activePage() {
+        this.itemsMenuRoute.status = true
+        this.activitieModule.statusOffIconMapMenu()
     }
 }
 </script>

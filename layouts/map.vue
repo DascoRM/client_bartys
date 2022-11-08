@@ -27,6 +27,9 @@ import AuthetificationModule from '~/store/authentification'
     }
 })
 export default class LayoutMap  extends Vue {
+    layout() {
+        return 'map'
+    }
     public authentificationModule = getModule(AuthetificationModule, this.$store)
     public get authentified() {
         return this.authentificationModule.isAuthentified

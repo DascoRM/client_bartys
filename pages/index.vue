@@ -3,12 +3,12 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
-  @Component
-  export default class IndexPage extends Vue {
-    layout() {
-      return 'map'
-    }
+@Component
+export default class IndexPage extends Vue {
+  layout() {
+    return 'map'
   }
+}
 </script>

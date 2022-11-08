@@ -16,7 +16,11 @@
                 <div>
                     <NuxtLink class="flex flex-col items-center" to="/">
                         <component @click.native="clickToCall(item)"  class="icon" :is="item.component" />
-                        <p class="text-xs font-dynapuff text-grey" :class="{'border-b-4 border-blueDark rounded-lg text-black' : item.status}">{{ item.title }}</p>
+                        <p 
+                            class="text-xs font-dynapuff" 
+                            :class="[item.status ? 'border-b-4 border-blueDark rounded-lg text-black-600' : 'text-gray-500']">
+                            {{ item.title }}
+                        </p>
                     </NuxtLink>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white text-blueDark inline-flex">
+    <div class="bg-white text-blueDark inline-flex shadow-lg">
         <div class="hidden md:flex justify-around items-center w-1/3">
             <p class="font-dynapuff text-title">
                 <NuxtLink to="/">
@@ -16,7 +16,11 @@
                 <div>
                     <NuxtLink class="flex flex-col items-center" to="/">
                         <component @click.native="clickToCall(item)"  class="icon" :is="item.component" />
-                        <p class="text-xs font-dynapuff">{{ item.title }}</p>
+                        <p 
+                            class="text-xs font-dynapuff" 
+                            :class="[item.status ? 'border-b-4 border-blueDark rounded-lg text-black-600' : 'text-gray-500']">
+                            {{ item.title }}
+                        </p>
                     </NuxtLink>
                 </div>
             </div>

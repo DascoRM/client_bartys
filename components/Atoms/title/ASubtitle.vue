@@ -8,7 +8,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class ASubtitle extends Vue {
     @Prop() title!: string
-    @Prop({default: "white"}) colorText?: string
+    @Prop({default: "blueDark"}) colorText?: string
 }
 </script>
 

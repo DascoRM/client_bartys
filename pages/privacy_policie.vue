@@ -20,7 +20,7 @@
             </div>
             <div>
                 <div>
-                <ATitleBase title="Les informations personnelles que nous collectons :" />
+                <ASubtitle title="Les informations personnelles que nous collectons :" />
             </div>
             <div>
                 Lorsque vous visitez le bartys.fr, nous recueillons automatiquement certaines informations sur votre appareil, notamment des informations sur votre navigateur web, votre adresse IP, votre fuseau horaire et certains des cookies installés sur votre appareil. En outre, lorsque vous naviguez sur le site, nous recueillons des informations sur les pages web ou les produits individuels que vous consultez, sur les sites web ou les termes de recherche qui vous ont renvoyé au site et sur la manière dont vous interagissez avec le site. Nous désignons ces informations collectées automatiquement par le terme "informations sur les appareils". En outre, nous pourrions collecter les données personnelles que vous nous fournissez (y compris, mais sans s'y limiter, le nom, le prénom, l'adresse, les informations de paiement, etc.) lors de l'inscription afin de pouvoir exécuter le contrat.
@@ -42,7 +42,7 @@
             </div>
             <div>
                 <div>
-                    <ATitleBase title="Vos droits :"/>
+                    <ASubtitle title="Vos droits :"/>
                 </div>
                 <div>
                     <p>
@@ -68,14 +68,14 @@
                 </div>
                 <div>
                     <div>
-                        <ATitleBase title="Liens vers d'autres sites web :"/>
+                        <ASubtitle title="Liens vers d'autres sites web :"/>
                     </div>
                     <p>
                         Notre site web peut contenir des liens vers d'autres sites web qui ne sont pas détenus ou contrôlés par nous. Sachez que nous ne sommes pas responsables de ces autres sites web ou des pratiques de confidentialité des tiers. Nous vous encourageons à être attentif lorsque vous quittez notre site web et à lire les déclarations de confidentialité de chaque site web susceptible de collecter des informations personnelles.
                     </p>
                 </div>
                 <div>
-                    <ATitleBase title="Sécurité de l'information :"/>
+                    <ASubtitle title="Sécurité de l'information :"/>
                 </div>
                 <div>
                     <p>
@@ -85,7 +85,7 @@
             </div>
             <div>
                 <div>
-                     <ATitleBase title="Divulgation légale :"/>
+                     <ASubtitle title="Divulgation légale :"/>
                 </div>
                 <div>
                     <p>
@@ -95,7 +95,7 @@
             </div>
             <div>
                 <div>
-                    <ATitleBase title="Informations de contact :"/>
+                    <ASubtitle title="Informations de contact :"/>
                 </div>
                 <p>
                     Si vous souhaitez nous contacter pour comprendre davantage la présente politique ou si vous souhaitez nous contacter concernant toute question relative aux droits individuels et à vos informations personnelles, vous pouvez envoyer un courriel à contact@bartys.com.
@@ -107,9 +107,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import ASubtitle from '@/components/Atoms/title/ASubtitle.vue'
 import ATitleBase from '@/components/Atoms/title/ATitleBase.vue'
 @Component({
     components: {
+        ASubtitle,
         ATitleBase
     }
 })

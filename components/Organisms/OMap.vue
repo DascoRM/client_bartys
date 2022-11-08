@@ -68,7 +68,7 @@
         public markerBarLatLng: number[] = []
         //Bar
         public iconBar = {
-            url: '/marker/beer.png',
+            url: '/marker/bar.png',
             size: [40,40]
         }
         //Club

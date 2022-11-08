@@ -1,5 +1,5 @@
 <template>    
-    <div class="relative mx-5 mb-5  md:max-w-sm bg-grey rounded-default shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div class="relative mx-5 mb-5  md:max-w-sm bg-grey rounded-default shadow-xl dark:bg-gray-800 dark:border-gray-700">
         <div class="absolute right-2 top-2">
             <component class="icon rounded-full border border-black p-1" :is="card.category" />
           </div>

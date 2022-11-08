@@ -16,7 +16,7 @@
          label="Message" 
          placeholder="Écrivez ce qu'il vous plait."
          @update="(message) => { contact.message = message }" />
-        <AButtonBase @click.native="$emit('sendMessage', contact)" title="Envoyez" />
+        <AButtonBase @click.native="$emit('sendMessage', contact)" title="Envoyez" class="shadow-button" />
     </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white">
+    <div class="bg-background">
         <OMenu class="z-40 w-full fixed md:relative bottom-0 md:top-0 md:bottom-auto" />
         <OMenuAction />
         <!-- <OModalLogin class="z-50 relative" v-if="!authentified" /> -->

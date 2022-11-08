@@ -19,6 +19,7 @@ module.exports = {
             big: '3rem',
             title: '1.563rem',
             subtitle: '0.9rem',
+            small: '0.7rem',
             min: '0.4rem'
         },
         extend: {
@@ -29,7 +30,8 @@ module.exports = {
                 'blueDark':  '#132A44',
                 'blueDarkOpacity': '#132a4478',
                 'blueLight': '#3470B6',
-                'grey': '#494E54'
+                'grey': '#494E54',
+                'background': '#F5F5F5'
             }
         },
     },

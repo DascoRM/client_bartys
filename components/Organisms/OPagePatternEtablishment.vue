@@ -1,22 +1,28 @@
 <template>
     <div>
-        <div class="pt-10 mb-10">
-            <ATitleBase :title="etablishmentSync.title" />
-            <p v-show="etablishmentSync.categories">
-                {{ etablishmentSync.categories }}
-            </p>
-            <p>{{ etablishmentSync.adress }}</p>
+        <div class="pt-10 mb-10 block md:flex md:justify-between md:items-start">
+            <div class="w-full">
+              <ATitleBase class="z-50 relative text-shadow" :title="etablishmentSync.title" />
+              <div class="z-0 absolute top-5 left-0 h-20 w-44 bg-green-400"></div>
+              <p v-show="etablishmentSync.categories">
+                  {{ etablishmentSync.categories }}
+              </p>
+              <p>{{ etablishmentSync.adress }}</p>
+            </div>
+            <div class="relative w-full hidden md:block">
+              <img class="w-3/6 absolute" :src="require(`icon/bar.svg`)" alt="">
+            </div>
         </div>
         <div class="mb-10">
             <ASubtitle title="Horaires:" />
             <p>{{ etablishmentSync.hours_opening }}</p>
         </div>
-        <div class="mb-5 inline-flex items-start w-full">
-            <div class="overflow-hidden w-1/2">
+        <div class="mb-5 w-fullflex  md:inline-flex items-start">
+            <div class="overflow-hidden w-full md:w-1/2">
                 <ASubtitle title="Évenements:" />
                 <ATimeLine :timelines="timelines" />
             </div>
-            <div class="overflow-hidden w-1/2">
+            <div class="overflow-hidden w-full md:w-1/2">
                 <ASubtitle title="Réseaux:" />
             </div>
         </div>

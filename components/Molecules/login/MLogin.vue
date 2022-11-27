@@ -1,6 +1,6 @@
 <template>
     <div class="mx-34 my-20 flex items-center flex-col">
-        <ATitleBase class="mb-12" colorText="blueDark" title="Écrivez-nous !!!" />
+        <ATitleBase class="mb-12" colorText="blueDark" title="Connectez-vous!" />
         <AInputField
             v-for="(item, index) in form"
             :key="index"
@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
 //Atoms
 import AInputField from '@/components/Atoms/input/AInputFiled.vue'
 import ATitleBase from '@/components/Atoms/title/ATitleBase.vue'

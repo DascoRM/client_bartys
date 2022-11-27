@@ -17,6 +17,7 @@ module.exports = {
         },
         fontSize: {
             big: '3rem',
+            bigMobile: '2rem',
             title: '1.563rem',
             subtitle: '0.9rem',
             small: '0.7rem',

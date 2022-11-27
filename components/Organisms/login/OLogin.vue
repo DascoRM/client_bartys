@@ -1,7 +1,7 @@
 <template>
     <div class="flex justify-center">
         <div class="bg-white h-screen w-full flex items-center md:w-2/3">
-            <MLogin :form="form" button="Valider" @submit="submitLogin" class="w-full" />
+            <MLogin :form="form" button="Se Connecter" @submit="submitLogin" class="w-full" />
         </div>
         <div class="bg-blueDark w-1/3 h-screen hidden md:block">
             <div class="h-screen flex items-center">

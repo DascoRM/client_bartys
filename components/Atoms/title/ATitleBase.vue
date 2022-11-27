@@ -1,5 +1,5 @@
 <template>
-    <h1 class="text-big font-dynapuff" :class="`text-${colorText}`">{{ title }}</h1>
+    <h1 class="text-bigMobile md:text-big font-dynapuff" :class="`text-${colorText}`">{{ title }}</h1>
 </template>
 
 <script lang="ts">

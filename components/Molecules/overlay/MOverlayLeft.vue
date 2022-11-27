@@ -25,7 +25,7 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class MOverlayLeft extends Vue {
-    private icons = ['beer.png', 'club.png']
+    private icons = ['bar.png', 'club.png', 'asso.png']
 
     /**
      * @function generateIcon

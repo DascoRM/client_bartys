@@ -3,7 +3,7 @@
         <div class="hidden md:flex justify-around items-center w-1/3">
             <p class="font-dynapuff text-title">
                 <NuxtLink to="/">
-                    <img class="rounded-t-default w-20" :src="require('img/logo_color.png')" alt="logo bartys" />
+                    <img class="rounded-t-default w-20" :src="require('img/logo_bartys_yellow.png')" alt="logo bartys" />
                 </NuxtLink>
             </p>
         </div>

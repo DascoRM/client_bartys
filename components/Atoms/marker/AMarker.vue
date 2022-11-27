@@ -4,7 +4,7 @@
         :lat-lng="[+marker.position.lat, +marker.position.long]"
         >
         <l-icon :icon-url="icon.url" :icon-size="icon.size" />
-        <l-popup @click.native="$emit('getPage', marker)">
+        <l-popup @click.native="$emit('getPage', marker)" class="cursor-pointer">
             <div class="flex justify-start mb-2">
                 <h1 class="font-bold">{{ marker.title }}</h1>
             </div>
@@ -22,9 +22,6 @@
             <div>
                 <ATitleSmall title="Horaires: " />
                 <p>{{ marker.hours_opening }}</p>
-            </div>
-            <div class="h-10">
-                <AButtonRedirect title="Plus d'info" :to='`/bar/${marker.id}`' color="shadow-button bg-blueLight px-2" />
             </div>
         </l-popup>
     </l-marker>

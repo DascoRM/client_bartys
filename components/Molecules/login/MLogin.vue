@@ -2,13 +2,17 @@
     <div class="mx-34 my-20 flex items-center flex-col">
         <ATitleBase class="text-center mb-12" colorText="blueDark" :title="phraseLog.titlePage" />
         <AInputField
-            v-for="(item, index) in form"
-            :key="index"
-            :type="item.type"
-            :label="item.label"
-            :placeholder="item.placeholder"
-            @update="item.update"
-         />
+            :type="form[0].type"
+            :label="form[0].label"
+            :placeholder="form[0].placeholder"
+            @update="(item) => { loginData.identifier = item}"
+        />
+        <AInputField
+            :type="form[1].type"
+            :label="form[1].label"
+            :placeholder="form[1].placeholder"
+            @update="(item) => { loginData.password = item}"
+        />
          <!-- If mobile -->
          <div class="my-5 md:hidden inline-flex">
             <p class="text-blueDark">{{ phraseLog.firstPart }}</p>
@@ -17,7 +21,7 @@
             </NuxtLink>
          </div>
          <AButtonBase 
-            @click.native="$emit('submit', form)" 
+            @click.native="$emit('submit', loginData)" 
             :title="button" 
             class="shadow-button" />
     </div>
@@ -30,6 +34,8 @@ import AInputField from '@/components/Atoms/input/AInputFiled.vue'
 import ATitleBase from '@/components/Atoms/title/ATitleBase.vue'
 import ATextAreaField from '@/components/Atoms/textarea/ATextAreaField.vue'
 import AButtonBase from '@/components/Atoms/button/AButtonBase.vue'
+//Store
+import { Login } from '~/store/user'
 //Interface
 export interface inputForm {
     type: string
@@ -74,6 +80,9 @@ export default class MLogin extends Vue {
                     pathRedirect: '/login'
                 }
     }
+
+    public loginData = {} as Login
+
 }
 </script>
 

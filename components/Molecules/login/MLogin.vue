@@ -56,6 +56,8 @@ export default class MLogin extends Vue {
     @Prop() form!: inputForm[]
     @Prop() button!: string
 
+    public loginData = {} as Login
+
     /**
      * @getter phraseLog
      * @description
@@ -72,16 +74,16 @@ export default class MLogin extends Vue {
                     secondPart: 'Inscrivez-vous',
                     pathRedirect: '/signup'
                 }
-        if (this.$route.path === '/signup')
-        return {
-                    titlePage: 'Inscrivez-vous!',
-                    firstPart: 'Déjà un compte ?',
-                    secondPart: 'Connectez-vous',
-                    pathRedirect: '/login'
-                }
+        //todo delete this
+        // if (this.$route.path === '/signup')
+        // return {
+        //             titlePage: 'Inscrivez-vous!',
+        //             firstPart: 'Déjà un compte ?',
+        //             secondPart: 'Connectez-vous',
+        //             pathRedirect: '/login'
+        //         }
     }
 
-    public loginData = {} as Login
 
 }
 </script>

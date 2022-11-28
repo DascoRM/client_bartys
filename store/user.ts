@@ -17,6 +17,9 @@ export interface Login {
     identifier: string
     password: string
 }
+export interface Signup extends Login {
+    email: string
+}
 
 @Module({ namespaced: true, name: 'user' })
 export default class UserModule extends VuexModule {
@@ -40,8 +43,15 @@ export default class UserModule extends VuexModule {
     }
 
     @Action
-    public async register(loginData: Login) {
+    public async login(loginData: Login) {
         const { data } = await $axios.post('/auth/local', loginData)
+        console.log(data)
+        return data
+    }
+
+    @Action
+    public async register(loginData: Signup) {
+        const { data } = await $axios.post('/auth/local/register', loginData)
         console.log(data)
         return data
     }

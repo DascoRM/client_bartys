@@ -60,7 +60,7 @@ export default class OLogin extends Vue {
         }
     ]
     public async submitLogin(loginData: Login) {
-        await this.userModule.register(loginData)
+        await this.userModule.login(loginData)
     }
 }
 </script>

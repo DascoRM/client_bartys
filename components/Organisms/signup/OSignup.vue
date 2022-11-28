@@ -21,53 +21,52 @@
             </div>
         </div>
         <div class="bg-white h-screen w-full flex items-center md:w-2/3">
-            <MLogin :form="form" button="Inscription" @submit="createAccount" class="w-full" />
+            <MSignup :form="form" button="Inscription" @submit="createAccount" class="w-full" />
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, getModule, Vue } from 'nuxt-property-decorator'
 //Atoms
 import ATitleBase from '@/components/Atoms/title/ATitleBase.vue'
 import AButtonBase from '@/components/Atoms/button/AButtonBase.vue'
 //Molecules
-import MLogin from '@/components/Molecules/login/MLogin.vue'
+import MSignup from '@/components/Molecules/login/MSignup.vue'
 import MOverlayLeft from '@/components/Molecules/overlay/MOverlayLeft.vue'
+import UserModule, { Signup } from '~/store/user'
 
 @Component({
     components: {
         MOverlayLeft,
         ATitleBase,
         AButtonBase,
-        MLogin
+        MSignup
     }
 })
 export default class OSignup extends Vue {
+    public userModule = getModule(UserModule, this.$store)
+
     public form = [
+         {
+            type: 'name',
+            label: 'Nom d\'utilisateur',
+            placeholder: '*************',
+        },
         {
-            type: 'mail',
+            type: 'email',
             label: 'E-mail',
             placeholder: 'ladoucevie@paradise.fr',
-            update: () => {}
         },
         {
             type: 'password',
             label: 'Mot de passe',
             placeholder: '*************',
-            update: () => {}
-        },
-        {
-            type: 'password',
-            label: 'Confirmation du mot de passe',
-            placeholder: '*************',
-            update: () => {}
         }
     ]
 
-    public createAccount() {
-        //Todo add request
-        return
+    public async createAccount(signupData: Signup) {
+        await this.userModule.register(signupData)
     }
 }
 </script>

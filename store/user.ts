@@ -12,6 +12,12 @@ export interface User {
     createdAt: Date
     updatedAt: Date
 }
+
+export interface Login {
+    identifier: string
+    password: string
+}
+
 @Module({ namespaced: true, name: 'user' })
 export default class UserModule extends VuexModule {
     public user!: User
@@ -30,6 +36,13 @@ export default class UserModule extends VuexModule {
     @Action({ commit: 'saveUserMe' })
     public  async fetchAllUsers(): Promise<User[]> {
         const { data } = await $axios.get('/users')
+        return data
+    }
+
+    @Action
+    public async register(loginData: Login) {
+        const { data } = await $axios.post('/auth/local', loginData)
+        console.log(data)
         return data
     }
 }

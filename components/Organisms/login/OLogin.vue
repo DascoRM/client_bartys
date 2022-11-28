@@ -27,13 +27,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, getModule, Vue } from 'nuxt-property-decorator'
 //Atoms
 import ATitleBase from '@/components/Atoms/title/ATitleBase.vue'
 import AButtonBase from '@/components/Atoms/button/AButtonBase.vue'
 //Molecules
 import MLogin from '@/components/Molecules/login/MLogin.vue'
 import MOverlayLeft from '@/components/Molecules/overlay/MOverlayLeft.vue'
+import UserModule, { Login } from '~/store/user'
 
 @Component({
     components: {
@@ -44,24 +45,22 @@ import MOverlayLeft from '@/components/Molecules/overlay/MOverlayLeft.vue'
     }
 })
 export default class OLogin extends Vue {
+    public userModule = getModule(UserModule, this.$store)
+
     public form = [
         {
-            type: 'mail',
+            type: 'email',
             label: 'E-mail',
             placeholder: 'ladoucevie@paradise.fr',
-            update: () => {}
         },
         {
             type: 'password',
             label: 'Mot de passe',
             placeholder: '*************',
-            update: () => {}
         }
     ]
-
-    public submitLogin() {
-        //Todo add request
-        return
+    public async submitLogin(loginData: Login) {
+        await this.userModule.register(loginData)
     }
 }
 </script>

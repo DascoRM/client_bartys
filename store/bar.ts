@@ -39,10 +39,23 @@ export default class BarModule extends VuexModule {
   clearBar() {
     this.bar = {} as BarResponse
   }
-
+  //Todo change limite=-1
+  // Create an algo for check position screen (on a map (lat and long)) and check bar and club they have a same position (dans les disaine)
+ /**
+  * @exemple
+  * find lat and log chambéry
+  * lat 45.5666667
+  * long 5.916666666666667
+  * 
+  * Check bars and club they hare a same possition
+  * lat: 45.56
+  * long: 5.91
+  */
   @Action({ commit: 'saveAll'})
   async fetchAll():Promise<BarResponse> {
-    const { data } = await $axios.get('/bars')
+    const { data } = await $axios.get('/bars?pagination[limit]=-1')
+    data.data.map((item: any) => {
+    })
     return data.data
   }
 
